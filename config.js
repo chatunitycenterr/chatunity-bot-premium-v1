@@ -92,7 +92,7 @@ global.packname = `╭ 𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲\n┃\n┃ » 𝚃�
 global.author = ` ╭ 𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲 ✓\n ┃\n ┃ » 𝙶𝚒𝚝𝙷𝚞𝚋:\n ┃ ChatUnity\n ┃\n ┃ ⊹ developed by chatunity.\n ┃\n ┃ ♡ Apoyo\n ┃ » 𝙿𝚊𝚢𝙿𝚊𝚕:\n ┃ @chatunity\n ╰━━━━━━━━•` //"ChatUnity"
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
-// [ES] > INFORMACIÓN DE VERSIONES DEL BOT, POR FAVOR 
+// [ES] > INFORMAZIONI DE VERSIONES DEL BOT, POR FAVOR 
 // MANTENGA ESTO SIN MODIFICAR, NOS ESFORZAMOS A DIARIO POR OFRECERLES UN BOT PARA LA COMUNIDAD, SEA AGRADECIDO 😉
 // [EN] > BOT VERSION INFORMATION, PLEASE KEEP THIS UNCHANGED, WE STRIVE DAILY TO PROVIDE YOU WITH A BOT FOR THE COMMUNITY, BE GRATEFUL
 global.vs = "1.0.0"
