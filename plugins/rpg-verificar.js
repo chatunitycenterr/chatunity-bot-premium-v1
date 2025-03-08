@@ -1,4 +1,3 @@
-// CÓDIGO CREADO POR ChatUnity : https://github.com/ChatUnity 
 import { createHash } from 'crypto'  
 import fetch from 'node-fetch'
 import PhoneNumber from 'awesome-phonenumber'
@@ -6,12 +5,12 @@ import moment from 'moment-timezone'
 import axios from 'axios'
 import _ from "lodash"
 
-let nombre = 0, edad = 0, genero = 0, bio = 0, identidad = 0, pasatiempo = 0, registro, _registro, fecha, hora, tiempo, registrando, fechaBio
-let pas1 = 0, pas2 = 0, pas3 = 0, pas4 = 0, pas5 = 0  
+let nome = 0, età = 0, genere = 0, bio = 0, identità = 0, hobby = 0, registro, _registro, data, ora, tempo, registrando, dataBio
+let hob1 = 0, hob2 = 0, hob3 = 0, hob4 = 0, hob5 = 0  
 
 let handler = async function (m, { conn, text, command, usedPrefix }) {
   let key 
-  let sinDefinir = '😿 È privata'
+  let nonDefinito = '😿 È privata'
   let d = new Date(new Date + 3600000)
   let locale = 'it'
   let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
@@ -39,23 +38,23 @@ let handler = async function (m, { conn, text, command, usedPrefix }) {
   }
   function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]}
-  let nombreWA = await usedPrefix + conn.getName(m.sender) //'@' + m.sender.split("@s.whatsapp.net")[0]
+  let nomeWA = await usedPrefix + conn.getName(m.sender) //'@' + m.sender.split("@s.whatsapp.net")[0]
   let user = global.db.data.users[m.sender]
   let verificar = new RegExp(usedPrefix)
   
   let who2 = m.isGroup ? _.get(m, "mentionedJid[0]", m.quoted?.sender || m.sender) : m.sender
   let biografia = await conn.fetchStatus(who2).catch(() => null)
   if (!biografia || !biografia[0] || biografia[0].status === null) {
-  bio = sinDefinir
-  fechaBio = "Data non disponibile"
+  bio = nonDefinito
+  dataBio = "Data non disponibile"
   } else {
-  bio = biografia[0].status || sinDefinir
-  fechaBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString("it-IT", { day: "2-digit", month: "2-digit", year: "numeric", }) : "Data non disponibile"
+  bio = biografia[0].status || nonDefinito
+  dataBio = biografia[0].setAt ? new Date(biografia[0].setAt).toLocaleDateString("it-IT", { day: "2-digit", month: "2-digit", year: "numeric", }) : "Data non disponibile"
   }
     
   let intervalId
-  function mensajeRegistro() {
-  if (edad === 0) {
+  function messaggioRegistro() {
+  if (età === 0) {
   clearInterval(intervalId)	
   registrando = false
   return
@@ -63,7 +62,7 @@ let handler = async function (m, { conn, text, command, usedPrefix }) {
   if (user.registered === true) {
   return 
   }
-  if (typeof genero === 'string') {
+  if (typeof genere === 'string') {
   global.db.data.users[m.sender]['registroC'] = true
   registrando = false
   conn.reply(m.chat, `*IL TUO TEMPO DI REGISTRAZIONE È TERMINATO!!*\n\n_Se non continui ora, il tuo registro non verrà salvato. Se provi a salvarlo più tardi, sarà perso_\n\n*Per continuare scrivi:* ${usedPrefix}finalizar`, fkontak, m)
@@ -76,14 +75,14 @@ let handler = async function (m, { conn, text, command, usedPrefix }) {
       
   if (user.registered === true) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}*SEI GIÀ REGISTRATO!!*\n*SE VUOI ANNULLARE LA REGISTRAZIONE, USA QUESTO COMANDO*\n*${usedPrefix}unreg numero di serie*\n\n*SE NON RICORDI IL TUO NUMERO DI SERIE, USA QUESTO COMANDO*\n*${usedPrefix}myns*`, fkontak, m)	
   
-  if (command == 'verificar' || command == 'verify' || command == 'register' || command == 'reg' || command == 'registrar') {
+  if (command == 'verifica' || command == 'verify' || command == 'register' || command == 'reg' || command == 'registrazione') {
   await conn.reply(m.chat, `*👀 COME VUOI REGISTRARTI?*\n\n📑 *REGISTRAZIONE RAPIDA*\n• Badge di verifica\n• Sblocco comandi che richiedono la registrazione\n\n*Scrivi per la registrazione rapida:*\n${usedPrefix}reg1 nome età\n\n🗂️ *REGISTRAZIONE COMPLETA*\n• Badge di verifica\n• Sblocco comandi che richiedono la registrazione\n• Premium temporaneo gratuito\n• Più opzioni per questa registrazione\n\n*Scrivi per la registrazione completa:*\n${usedPrefix}nome\n\n\`\`\`⭐ Considera che avrai un tempo limitato per completare la registrazione\`\`\``, fkontak, m)
   }
   
   if (command == 'reg1') {
   registrando = true
   if (registrando === true) {
-  intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000) //2 min
+  intervalId = setInterval(messaggioRegistro, 2 * 60 * 1000) //2 min
   setTimeout(() => {
   clearInterval(intervalId)}, 126000) //2.1 min
   }
@@ -2270,102 +2269,102 @@ seleccionarPasatiempos(seleccion)
 }	
 	
 if (command == 'finalizar' || command == 'end') {
-if (global.db.data.users[m.sender]['registroC'] == true) {
-if (user.premLimit === 0) {	
-tiempo = user.premLimit === 1 ? 0 : 36000000 //10 horas
-var now = new Date() * 1
-if (now < user.premiumTime) user.premiumTime += tiempo
-else user.premiumTime = now + tiempo
-user.premium = true
-}
-fecha = `${week}, ${date} *||* `
-hora = `${time}`
-user.tiempo = fecha + hora
-user.name = user.name === 0 ? sinDefinir : user.name + 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'
-user.descripcion = bio
-user.age = user.age === 0 ? sinDefinir : user.age >= 18 ? user.age += ' Años ' + '(Persona Adulta)' : user.age += ' Años ' + '(Persona Joven)'
-user.genero = user.genero === 0 ? sinDefinir : user.genero == 'Ocultado' ? `${user.genero} 🕶️` : user.genero == 'Mujer' ? `${user.genero} 🚺` : user.genero == 'Hombre' ? `${user.genero} 🚹` : sinDefinir
-user.identidad = user.identidad === 0 ? sinDefinir : user.identidad
-user.pasatiempo = user.pasatiempo === 0 ? sinDefinir : user.pasatiempo
-}else{
-fecha = `${week}, ${date} || `
-hora = `${time}`
-user.tiempo = fecha + hora
-user.name = user.name === 0 ? sinDefinir : user.name + 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'
-user.age = user.age === 0 ? sinDefinir : user.age >= 18 ? user.age += ' Años ' + '(Persona Adulta)' : user.age += ' Años ' + '(Persona Joven)'
-user.descripcion = bio	
-}
-user.regTime = + new Date
-user.registered = true
-let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)	
-registrando = false
-clearInterval(intervalId)	
-await conn.sendMessage(m.chat, {
-text: `🍃 \`\`\`VERIFICACIÓN EXITOSA\`\`\` 🍃
-*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n
-😼 *REGISTRADO POR*
-❱❱ ${wm}\n
-📑 *TIPO DE REGISTRO* 
-❱❱ ${user.registroC === true ? 'REGISTRO COMPLETO' : 'REGISTRO RÁPIDO'}\n
-⌛ *FECHA/HORA*
-❱❱ ${user.tiempo}\n
-🛅 *CÓDIGO DE REGISTRO*
-❱❱ ${sn}\n
-✅ *INSIGNIA DE VERIFICACIÓN*
-❱❱   *${user.registered === true ? 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ' : ''}*\n
-✨ *NOMBRE* 
-❱❱ ${user.name}\n
-👀 *DESCRIPCIÓN*
-❱❱ ${user.descripcion}\n
-⏳ *MODIFICACIÓN DE DESCRIPCIÓN*
-❱❱ ${fechaBio}\n
-🔢 *EDAD* 
-❱❱ ${user.age}\n
-${user.registroC === true ? `☘️ *GÉNERO*
-❱❱ ${user.genero}\n
-🌱 *ORIENTACIÓN SEXUAL*
-❱❱ ${user.identidad}\n
-❇️ *PASATIEMPO(S)*
-❱❱ ${user.pasatiempo}\n
-${user.premLimit === 1 ? '' : `🎟️ *PREMIUM*
-❱❱ ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}\n> *Mira tú registro en este canal*\nhttps://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g`.trim(),
-contextInfo: {
-externalAdReply: {
-title: wm,
-body: user.name,
-thumbnailUrl: pp, 
-sourceUrl: 'https://www.atom.bio/chatunity',
-mediaType: 1,
-showAdAttribution: true,
-renderLargerThumbnail: true
-}}}, { quoted: fkontak })
-await m.reply(`${sn}`)	
-
-let chtxt = `📑 *Tipo de registro »* ${user.registroC === true ? 'Completo' : 'Rápido'} ${userNationality ? `\n🌎 *País »* ${userNationality}` : ''}
-👤 *Usuario »* ${m.pushName || 'Anónimo'}
-✅ *Verificación »* ${user.name}
-👀 *Descripción »* ${user.descripcion} 
-⏳ *Modificación de descripción »* ${fechaBio}
-🔢 *Edad »* ${user.age}${user.registroC === true ? `\n☘️ *Género »* ${user.genero}
-🌱 *Orientación Sexual »* ${user.identidad}
-❇️ *Pasatiempo(s) »* ${user.pasatiempo}
-${user.premLimit === 1 ? '' : `🎟️ *Premium »* ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n\n> 🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}
-💬 *Bot:* ${gt}`.trim()
-await global.conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
-externalAdReply: {
-title: "【 🔔 Notificación General 🔔 】",
-body: '🥳 ¡Nuevo usuario registrado!',
-thumbnailUrl: ppch,
-sourceUrl: accountsgb,
-mediaType: 1,
-showAdAttribution: false,
-renderLargerThumbnail: false
-}}}, { quoted: null })
-}}
-handler.command = ['verify', 'verificar', 'register', 'registrar', 'reg', 'reg1', 'nombre', 'name', 'nombre2', 'name2', 'edad', 'age', 'edad2', 'age2', 'genero', 'género', 'gender', 'identidad', 'pasatiempo', 'hobby', 'identity', 'finalizar', 'pas2', 'pas3', 'pas4', 'pas5']  ///^(verify|verificar|reg(ister)?)$/i
-export default handler
-
-function pickRandom(list) { 
-return list[Math.floor(Math.random() * list.length)]} 
+  if (global.db.data.users[m.sender]['registroC'] == true) {
+  if (user.premLimit === 0) {	
+  tempo = user.premLimit === 1 ? 0 : 36000000 //10 ore
+  var now = new Date() * 1
+  if (now < user.premiumTime) user.premiumTime += tempo
+  else user.premiumTime = now + tempo
+  user.premium = true
+  }
+  data = `${week}, ${date} *||* `
+  ora = `${time}`
+  user.tempo = data + ora
+  user.name = user.name === 0 ? nonDefinito : user.name + 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'
+  user.descripcion = bio
+  user.age = user.age === 0 ? nonDefinito : user.age >= 18 ? user.age += ' Anni ' + '(Persona Adulta)' : user.age += ' Anni ' + '(Persona Giovane)'
+  user.genero = user.genero === 0 ? nonDefinito : user.genero == 'Ocultado' ? `${user.genero} 🕶️` : user.genero == 'Donna' ? `${user.genero} 🚺` : user.genero == 'Uomo' ? `${user.genero} 🚹` : nonDefinito
+  user.identidad = user.identidad === 0 ? nonDefinito : user.identidad
+  user.pasatiempo = user.pasatiempo === 0 ? nonDefinito : user.pasatiempo
+  }else{
+  data = `${week}, ${date} || `
+  ora = `${time}`
+  user.tempo = data + ora
+  user.name = user.name === 0 ? nonDefinito : user.name + 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'
+  user.age = user.age === 0 ? nonDefinito : user.age >= 18 ? user.age += ' Anni ' + '(Persona Adulta)' : user.age += ' Anni ' + '(Persona Giovane)'
+  user.descripcion = bio	
+  }
+  user.regTime = + new Date
+  user.registered = true
+  let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)	
+  registrando = false
+  clearInterval(intervalId)	
+  await conn.sendMessage(m.chat, {
+  text: `🍃 \`\`\`VERIFICA COMPLETATA\`\`\` 🍃
+  *- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n
+  😼 *REGISTRATO DA*
+  ❱❱ ${wm}\n
+  📑 *TIPO DI REGISTRO* 
+  ❱❱ ${user.registroC === true ? 'REGISTRO COMPLETO' : 'REGISTRO RAPIDO'}\n
+  ⌛ *DATA/ORA*
+  ❱❱ ${user.tiempo}\n
+  🛅 *CODICE DI REGISTRO*
+  ❱❱ ${sn}\n
+  ✅ *BADGE DI VERIFICA*
+  ❱❱   *${user.registered === true ? 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ' : ''}*\n
+  ✨ *NOME* 
+  ❱❱ ${user.name}\n
+  👀 *DESCRIZIONE*
+  ❱❱ ${user.descripcion}\n
+  ⏳ *MODIFICA DESCRIZIONE*
+  ❱❱ ${fechaBio}\n
+  🔢 *ETÀ* 
+  ❱❱ ${user.age}\n
+  ${user.registroC === true ? `☘️ *GENERE*
+  ❱❱ ${user.genero}\n
+  🌱 *ORIENTAMENTO SESSUALE*
+  ❱❱ ${user.identidad}\n
+  ❇️ *HOBBY*
+  ❱❱ ${user.pasatiempo}\n
+  ${user.premLimit === 1 ? '' : `🎟️ *PREMIUM*
+  ❱❱ ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 ORE || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n🌟 *Se è la tua prima registrazione, riceverai ore premium gratuite come bonus esclusivo per la tua prima iscrizione, puoi annullare ed eliminare la tua registrazione in qualsiasi momento. Grazie per esserti registrato ✨*` : ''}\n> *Guarda il tuo registro in questo canale*\nhttps://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g`.trim(),
+  contextInfo: {
+  externalAdReply: {
+  title: wm,
+  body: user.name,
+  thumbnailUrl: pp, 
+  sourceUrl: 'https://www.atom.bio/chatunity',
+  mediaType: 1,
+  showAdAttribution: true,
+  renderLargerThumbnail: true
+  }}}, { quoted: fkontak })
+  await m.reply(`${sn}`)	
   
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+  let chtxt = `📑 *Tipo di registro »* ${user.registroC === true ? 'Completo' : 'Rapido'} ${userNationality ? `\n🌎 *Paese »* ${userNationality}` : ''}
+  👤 *Utente »* ${m.pushName || 'Anonimo'}
+  ✅ *Verifica »* ${user.name}
+  👀 *Descrizione »* ${user.descripcion} 
+  ⏳ *Modifica descrizione »* ${fechaBio}
+  🔢 *Età »* ${user.age}${user.registroC === true ? `\n☘️ *Genere »* ${user.genero}
+  🌱 *Orientamento Sessuale »* ${user.identidad}
+  ❇️ *Hobby »* ${user.pasatiempo}
+  ${user.premLimit === 1 ? '' : `🎟️ *Premium »* ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 ORE || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n\n> 🌟 *Se è la tua prima registrazione, riceverai ore premium gratuite come bonus esclusivo per la tua prima iscrizione, puoi annullare ed eliminare la tua registrazione in qualsiasi momento. Grazie per esserti registrato ✨*` : ''}
+  💬 *Bot:* ${gt}`.trim()
+  await global.conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
+  externalAdReply: {
+  title: "【 🔔 Notifica Generale 🔔 】",
+  body: '🥳 Nuovo utente registrato!',
+  thumbnailUrl: ppch,
+  sourceUrl: accountsgb,
+  mediaType: 1,
+  showAdAttribution: false,
+  renderLargerThumbnail: false
+  }}}, { quoted: null })
+  }}
+  handler.command = ['verify', 'verifica', 'register', 'registrazione', 'reg', 'reg1', 'nome', 'name', 'nombre2', 'name2', 'edad', 'age', 'edad2', 'age2', 'genero', 'género', 'gender', 'identidad', 'passatempo', 'hobby', 'identity', 'finalizare', 'pas2', 'pas3', 'pas4', 'pas5']  ///^(verify|verificar|reg(ister)?)$/i
+  export default handler
+  
+  function pickRandom(list) { 
+  return list[Math.floor(Math.random() * list.length)]} 
+    
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
