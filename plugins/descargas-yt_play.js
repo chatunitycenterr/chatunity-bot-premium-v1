@@ -13,30 +13,30 @@ if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsMalu
 const yt_play = await search(args.join(' '));
 const ytplay2 = await yts(text);
 const texto1 = `⌘━─━─≪ *YOUTUBE* ≫─━─━⌘
-★ ${mid.smsYT1}
+★ Titolo:
 ★ ${yt_play[0].title}
 ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
-★ ${mid.smsYT15}
+★ Pubblicato:
 ★ ${yt_play[0].ago}
 ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
-★ ${mid.smsYT5}
+★ Durata:
 ★ ${secondString(yt_play[0].duration.seconds)}
 ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
-★ ${mid.smsYT10}
+★ Visualizzazioni:
 ★ ${MilesNumber(yt_play[0].views)}
 ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
-★ ${mid.smsYT2}
+★ Autore:
 ★ ${yt_play[0].author.name}
 ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
-★ ${mid.smsYT4}
+★ Link:
 ★ ${yt_play[0].url.replace(/^https?:\/\//, '')}
-⌘━━─≪ ${gt} ≫─━━⌘
+⌘━━─≪ Chatunity-Premium ≫─━━⌘
 `.trim();
 
 tempStorage[m.sender] = { url: yt_play[0].url, title: yt_play[0].title };
 
 if (m.isWABusiness) {
-await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1 + `\n> Para descargas en audio reacciona con "🎶"\n> Para descargar en video reacciona con "📽"`, m, null, fake);
+  await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1 + `\n> Per scaricare in audio, reagisci con "🎶"\n> Per scaricare in video, reagisci con "📽"`, m, null, fake);
 } else {
 await conn.sendMessage(m.chat, { image: { url: yt_play[0].thumbnail }, caption: gt, footer: texto1,buttons: [{ buttonId: `.ytmp3 ${yt_play[0].url}`, buttonText: { displayText: "𓃠 𝗔 𝗨 𝗗 𝗜 𝗢" }, type: 1 }, { buttonId: `.ytmp4 ${yt_play[0].url}`, buttonText: { displayText: "𓃠 𝗩 𝗜 𝗗 𝗘 𝗢" }, type: 1 }], viewOnce: true, headerType: 4 }, { quoted: m });
 }};
