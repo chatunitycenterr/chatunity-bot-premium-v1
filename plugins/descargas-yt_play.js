@@ -12,25 +12,25 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
 if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsMalused4}\n*${usedPrefix + command} Billie Eilish - Bellyache*`, m);
 const yt_play = await search(args.join(' '));
 const ytplay2 = await yts(text);
-const texto1 = `⌘━─━─≪ *YOUTUBE* ≫─━─━⌘
+const texto1 = `⌘━─━≪ *YOUTUBE* ≫━─━⌘
 ★ Titolo:
 ★ ${yt_play[0].title}
-╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ 
 ★ Pubblicato:
 ★ ${yt_play[0].ago}
-╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 ★ Durata:
 ★ ${secondString(yt_play[0].duration.seconds)}
-╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 ★ Visualizzazioni:
 ★ ${MilesNumber(yt_play[0].views)}
-╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ 
 ★ Autore:
 ★ ${yt_play[0].author.name}
-╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
+╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴ ╴
 ★ Link:
 ★ ${yt_play[0].url.replace(/^https?:\/\//, '')}
-⌘━━─≪ Chatunity-Premium ≫─━━⌘
+⌘━━≪Chatunity-Premium≫━━⌘
 `.trim();
 
 tempStorage[m.sender] = { url: yt_play[0].url, title: yt_play[0].title };
