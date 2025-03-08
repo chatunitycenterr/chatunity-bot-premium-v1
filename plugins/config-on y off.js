@@ -640,7 +640,7 @@ ${m.isGroup ? `` : `${lenguajeGB.smsConfi9()}`}
 
 ✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiTraba ? '✅' : '❌' : lenguajeGB.smsNoGg()}
 ✦ ${usedPrefix + command} antitraba
-✦ El Bot detecta textos largos que podrian ser virus y causar lag en el chat y elimina al usuario.
+✦ Il Bot rileva testi lunghi che potrebbero essere virus e causare ritardi nella chat ed elimina l'utente.
 
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 

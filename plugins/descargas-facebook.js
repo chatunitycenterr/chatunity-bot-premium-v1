@@ -6,10 +6,10 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 const handler = async (m, {conn, args, command, usedPrefix}) => {
 let user = global.db.data.users[m.sender]
-if (!args[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙐𝙉 𝙀𝙉𝙇𝘼𝘾𝙀 𝘿𝙀 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝘼𝙍𝘼 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙍 𝙀𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙅𝙀𝙈𝙋𝙇𝙊\n*${usedPrefix + command} https://www.facebook.com/watch?v=636541475139*\n\n𝙀𝙉𝙏𝙀𝙍 𝘼 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙇𝙄𝙉𝙆 𝙏𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝙏𝙃𝙀 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙓𝘼𝙈𝙋𝙇𝙀\n*${usedPrefix + command} https://fb.watch/dcXq_0CaHi/*`, fkontak, m)
-if (!args[0].match(/www.facebook.com|fb.watch/g)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙐𝙉 𝙀𝙉𝙇𝘼𝘾𝙀 𝘿𝙀 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝘼𝙍𝘼 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙍 𝙀𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙅𝙀𝙈𝙋𝙇𝙊\n*${usedPrefix + command} https://www.facebook.com/watch?v=636541475139*\n\n𝙀𝙉𝙏𝙀𝙍 𝘼 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙇𝙄𝙉𝙆 𝙏𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝙏𝙃𝙀 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙓𝘼𝙈𝙋𝙇𝙀\n*${usedPrefix + command} https://fb.watch/dcXq_0CaHi/*`, fkontak, m)
-let contenido = `✅ 𝙑𝙄𝘿𝙀𝙊 𝘿𝙀 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆\n${wm}`
-await m.react('⏱️')
+if (!args[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙎𝙀𝙍𝙄𝙎𝘾𝙄 𝙐𝙉 𝙇𝙄𝙉𝙆 𝘿𝙄 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝙀𝙍 𝙎𝘾𝘼𝙍𝙄𝘾𝘼𝙍𝙀 𝙄𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙎𝙀𝙈𝙋𝙄𝙊\n*${usedPrefix + command} https://www.facebook.com/watch?v=636541475139*\n\n𝙄𝙉𝙎𝙀𝙍𝙄𝙎𝘾𝙄 𝙐𝙉 𝙇𝙄𝙉𝙆 𝘿𝙄 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝙀𝙍 𝙎𝘾𝘼𝙍𝙄𝘾𝘼𝙍𝙀 𝙄𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙎𝙀𝙈𝙋𝙄𝙊\n*${usedPrefix + command} https://fb.watch/dcXq_0CaHi/*`, fkontak, m)
+if (!args[0].match(/www.facebook.com|fb.watch/g)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙎𝙀𝙍𝙄𝙎𝘾𝙄 𝙐𝙉 𝙇𝙄𝙉𝙆 𝘿𝙄 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝙀𝙍 𝙎𝘾𝘼𝙍𝙄𝘾𝘼𝙍𝙀 𝙄𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙎𝙀𝙈𝙋𝙄𝙊\n*${usedPrefix + command} https://www.facebook.com/watch?v=636541475139*\n\n𝙄𝙉𝙎𝙀𝙍𝙄𝙎𝘾𝙄 𝙐𝙉 𝙇𝙄𝙉𝙆 𝘿𝙄 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆 𝙋𝙀𝙍 𝙎𝘾𝘼𝙍𝙄𝘾𝘼𝙍𝙀 𝙄𝙇 𝙑𝙄𝘿𝙀𝙊\n𝙀𝙎𝙀𝙈𝙋𝙄𝙊\n*${usedPrefix + command} https://fb.watch/dcXq_0CaHi/*`, fkontak, m)
+let contenido = `✅ 𝙑𝙄𝘿𝙀𝙊 𝘿𝙄 𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆\n${wm}`
+await m.react('⏱️')    
 try {
 const api = await fetch(`${global.APIs.neoxr.url}/fb?url=${args}&apikey=${global.APIs.neoxr.key}`);
 const response = await api.json();

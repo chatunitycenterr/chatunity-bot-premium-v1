@@ -25,7 +25,7 @@ m.reply(`${lenguajeGB['smsAvisoEG']()}${mid.smsGrup}`)
 }}
 handler.help = ['group open / close', 'grupo abrir / cerrar']
 handler.tags = ['group']
-handler.command = /^(group|grupo)$/i
+handler.command = /^(gruppi|gruppo)$/i
 handler.admin = true
 handler.botAdmin = true
 handler.exp = 200
