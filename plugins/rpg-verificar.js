@@ -75,7 +75,7 @@ let handler = async function (m, { conn, text, command, usedPrefix }) {
       
   if (user.registered === true) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}*SEI GIÀ REGISTRATO!!*\n*SE VUOI ANNULLARE LA REGISTRAZIONE, USA QUESTO COMANDO*\n*${usedPrefix}unreg numero di serie*\n\n*SE NON RICORDI IL TUO NUMERO DI SERIE, USA QUESTO COMANDO*\n*${usedPrefix}myns*`, fkontak, m)	
   
-  if (command == 'verifica' || command == 'verify' || command == 'register' || command == 'reg' || command == 'registrazione') {
+  if (command == 'verifica' || command == 'verify' || command == 'register' || command == 'reg1' || command == 'registrazione') {
   await conn.reply(m.chat, `*👀 COME VUOI REGISTRARTI?*\n\n📑 *REGISTRAZIONE RAPIDA*\n• Badge di verifica\n• Sblocco comandi che richiedono la registrazione\n\n*Scrivi per la registrazione rapida:*\n${usedPrefix}reg1 nome età\n\n🗂️ *REGISTRAZIONE COMPLETA*\n• Badge di verifica\n• Sblocco comandi che richiedono la registrazione\n• Premium temporaneo gratuito\n• Più opzioni per questa registrazione\n\n*Scrivi per la registrazione completa:*\n${usedPrefix}nome\n\n\`\`\`⭐ Considera che avrai un tempo limitato per completare la registrazione\`\`\``, fkontak, m)
   }
   
